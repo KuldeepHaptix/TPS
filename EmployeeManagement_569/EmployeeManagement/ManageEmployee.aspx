@@ -263,15 +263,15 @@
                                         <asp:Label ID="Label8" class="control-label" runat="server" Text="Contact No"></asp:Label><label style="color: red">*</label>
                                     </div>
                                     <div class="col-md-4">
-                                        <asp:TextBox ID="txtcontactno" runat="server" Style="width: 100%" class="form-control" AutoPostBack="false" Onchange="return Add()" TabIndex="23"></asp:TextBox>
+                                        <asp:TextBox ID="txtcontactno" runat="server" Style="width: 100%" class="form-control" AutoPostBack="false"  onkeypress="return isNumberKey(event)"  TabIndex="23"></asp:TextBox>
                                     </div>
 
 
                                     <div class="col-md-2">
-                                        <asp:Label ID="Label16" class="control-label" runat="server" Text="OtherContactNo"></asp:Label>
+                                        <asp:Label ID="Label16" class="control-label" runat="server"  Text="Alternate No"></asp:Label>
                                     </div>
                                     <div class="col-md-4">
-                                        <asp:TextBox ID="txtotherno" runat="server" Style="width: 100%" class="form-control" AutoPostBack="false" TabIndex="24"></asp:TextBox>
+                                        <asp:TextBox ID="txtotherno" runat="server"  onkeypress="return isNumberKey(event)" Style="width: 100%" class="form-control" AutoPostBack="false" TabIndex="24"></asp:TextBox>
                                     </div>
 
 
@@ -294,7 +294,7 @@
                                         <asp:Label ID="Label18" class="control-label" runat="server" Text="Pin Code"></asp:Label>
                                     </div>
                                     <div class="col-md-4">
-                                        <asp:TextBox ID="txtpincode" runat="server" class="form-control" AutoPostBack="false" TabIndex="27"> </asp:TextBox>
+                                        <asp:TextBox ID="txtpincode" runat="server" onkeypress="return isNumberKey(event)" class="form-control" AutoPostBack="false" TabIndex="27"> </asp:TextBox>
                                     </div>
 
 
@@ -1261,7 +1261,9 @@
             }
             return true;
         }
-    </script>  --%>  <script type="text/javascript">
+    </script>  --%>  
+    
+    <script type="text/javascript">
         function validatePersonalDetails() {
             if (document.getElementById("<%=txtresiAdd.ClientID%>").value == "") {
                 alert("Residential  Address can not be blank");

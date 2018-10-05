@@ -39,7 +39,7 @@
                         <div class="col-md-3">
                           <%--  <asp:TextBox ID="txtname" runat="server" class="form-control" AutoPostBack="false"></asp:TextBox>--%>
                            
-                            <asp:textbox runat="server"  ID="txtname" runat="server" class="form-control"></asp:textbox>
+                            <asp:textbox runat="server"  ID="txtname"  class="form-control"></asp:textbox>
                         </div><span style="color: red; margin-left: 15px" id="val_msg_wrap">
                                         <asp:Literal ID="ltrErr" runat="server"></asp:Literal>
                                     </span>
@@ -63,7 +63,7 @@
                     <div class="col-md-12">
 
                         <div class="col-md-2">
-                            <asp:Label ID="Label7" runat="server" Text="Confirm Password"></asp:Label><asp:Label ID="Label8" runat="server" Text="*" ForeColor="Red"></asp:Label>
+                            <asp:Label ID="Label7" runat="server"  Text="Confirm Password"></asp:Label><asp:Label ID="Label8" runat="server" Text="*" ForeColor="Red"></asp:Label>
                         </div>
                         <div class="col-md-3">
                             <asp:TextBox ID="txtconfpwd" runat="server" TextMode="Password" class="form-control" AutoPostBack="false"></asp:TextBox>
@@ -82,7 +82,6 @@
                             <asp:TextBox ID="txtemail" runat="server" class="form-control" on AutoPostBack="false"></asp:TextBox>
 
                         </div>
-                    </div>
                       <br />
                     <br />
                     <div class="col-md-12">
@@ -91,7 +90,7 @@
 ForeColor="Red">--%></asp:Label>
                         </div>
                         <div class="col-md-3">
-                            <asp:TextBox ID="txtcnno" runat="server" class="form-control" AutoPostBack="false"></asp:TextBox>
+                            <asp:TextBox ID="txtcnno" onkeypress="return isNumberKey(event)"  runat="server" class="form-control" AutoPostBack="false"></asp:TextBox>
 
                         </div>
                     </div>
@@ -112,7 +111,7 @@ ForeColor="Red">--%></asp:Label>
                       <div class="col-md-12">
 
                                     <div class="col-md-2">
-                                        <asp:Label ID="Label6" class="control-label" runat="server" Text="Gender"></asp:Label></label>
+                                        <asp:Label ID="Label6" class="control-label" runat="server" Text="Gender"></asp:Label>
                                     </div>
                                     <div class="col-md-4">
                                         <asp:RadioButton ID="rdbmale" runat="server" Text="&nbsp;Male" Checked="true" GroupName="gender"  TabIndex="8"/>
@@ -122,7 +121,7 @@ ForeColor="Red">--%></asp:Label>
                      <div class="row">
                     <div class="col-md-12 text-left" style="padding: 30px">
                         <asp:Button ID="btnSave" CssClass="btn btn-primary"
-                            runat="server" Text="Save" Style="width: 150px" on OnClick="btnSave_Click"  />
+                            runat="server" Text="Save" Style="width: 150px" OnClientClick="return validateRegistrationDetails()" OnClick="btnSave_Click"  />
                      
                     </div>
                 </div>
@@ -158,5 +157,55 @@ function validateEmail(emailField){
     
 }
 
+
     </script>
+
+    <script type="text/javascript">
+        function isNumberKey(evt) {
+            var charCode = (evt.which) ? evt.which : event.keyCode
+            if (charCode > 31 && (charCode < 48 || charCode > 57))
+                if (charCode == 45) {
+                    return true;
+                }
+                else {
+                    return false;
+                }
+
+            return true;
+        }
+
+    </script>
+<script type="text/javascript">
+    function validateRegistrationDetails() {
+        if (document.getElementById("<%=txtname.ClientID%>").value == "") {
+                alert("User Name can not be blank");
+                document.getElementById("<%=txtname.ClientID%>").focus();
+                return false;
+            }
+            if (document.getElementById("<%=txtpwd.ClientID%>").value == "") {
+                alert("Password  can not be blank");
+                document.getElementById("<%=txtpwd.ClientID%>").focus();
+                return false;
+            }
+            if (document.getElementById("<%=txtconfpwd.ClientID%>").value == "") {
+                alert("Confirm Password can not be blank");
+                document.getElementById("<%=txtconfpwd.ClientID%>").focus();
+                return false;
+            }
+        var pass1 = document.getElementById("<%=txtpwd.ClientID %>").value;
+        var pass2 = document.getElementById("<%=txtconfpwd.ClientID %>").value;
+        if (pass1 != pass2) {
+            document.getElementById("<%=lblmsg.ClientID %>").innerHTML = "Passwords Don't Match";
+            return false;
+        }
+        else {
+            document.getElementById("<%=lblmsg.ClientID %>").innerHTML = "";
+            //empty string means no validation error
+        }
+
+            return true;
+        }
+    </script>
+
+
 </html>

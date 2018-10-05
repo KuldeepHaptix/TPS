@@ -51,9 +51,9 @@ namespace EmployeeManagement
             SqlConnection con = new SqlConnection(strConnString);
             try
             {
-                string user_nm=txtname.Text.ToString();
+                string user_nm = txtname.Text.ToString();
                 SqlCommand cmd = new SqlCommand();
-                cmd.CommandText = "select user_nm from user_master where user_nm="+user_nm+"";
+                cmd.CommandText = "SELECT  [user_nm] FROM [TPS].[dbo].[User_master] where [user_nm]='" + user_nm + "'";
                 cmd.Connection = con;
                 con.Open();
                 SqlDataAdapter adp = new SqlDataAdapter(cmd);
@@ -61,18 +61,18 @@ namespace EmployeeManagement
                 adp.Fill(dtUserNm);
                 if (dtUserNm != null && dtUserNm.Rows.Count > 0)
                 {
-                    lblmsg.Text = "UserName Is Already Exists:"+dtUserNm.Rows[0]["User_nm"].ToString();                   
-                
+                    lblmsg.Text = "UserName Is Already Exists:" + dtUserNm.Rows[0]["User_nm"].ToString();
+
                 }
                 string pwd = txtpwd.Text.ToString();
                 string ConfPwd = txtconfpwd.Text.ToString();
-                if (pwd.Equals(ConfPwd))
-                {
+                //if (pwd.Equals(ConfPwd))
+                //{
 
-                    lblmsg.Text = "Passwod do not match..";
-                }
-                else
-                {
+                //    lblmsg.Text = "Passwod do not match..";
+                //}
+                //else
+                //{
                     string gender = "";
                     if (rdbmale.Checked)
                     {
@@ -84,45 +84,51 @@ namespace EmployeeManagement
                         gender = "Female";
                     }
                     string mail = txtemail.Text.ToString();
-                  bool yes=  ValidateEmail(mail);
-                  if (yes.Equals("true"))
-                  {
-                      string Contact_no = txtcnno.Text.ToString();
-                      SqlCommand cmdInsert = new SqlCommand();
-                      cmdInsert.CommandType = CommandType.StoredProcedure;
-                      cmdInsert.CommandText = "spsaveUserDetails ";
-                      //cmdInsert.CommandText = CommandType.StoredProcedure();
-                      cmdInsert.Connection = con;
-                      con.Open();
-                      cmdInsert.Parameters.AddWithValue("@username", user_nm);
-                      cmdInsert.Parameters.AddWithValue("@passowrd", pwd);
-                      cmdInsert.Parameters.AddWithValue("@gender", gender);
-                      cmdInsert.Parameters.AddWithValue("@contact_no", Contact_no);
-                      int y = cmdInsert.ExecuteNonQuery();
-                      if(y > 0)
-                      {
+                    bool yes = ValidateEmail(mail);
+                    if (yes)
+                    {
+                        SqlCommand cmdInsert = new SqlCommand("SaveuserDetails", con);
+                        cmdInsert.CommandType = CommandType.StoredProcedure;
+                        //cmdInsert.CommandText = "spsaveUserDetails ",con;
+                        //cmdInsert.CommandText = CommandType.StoredProcedure;
+                        cmdInsert.Connection = con;
+                        //con.Open();
+                        cmdInsert.Parameters.AddWithValue("@user_nm", user_nm);
+                        cmdInsert.Parameters.AddWithValue("@password", pwd);
+                        cmdInsert.Parameters.AddWithValue("@contact_no", txtcnno.Text.ToString());
+                        cmdInsert.Parameters.AddWithValue("@email",mail);
+                        cmdInsert.Parameters.AddWithValue("@gender", gender);
+                      
+                        int y = cmdInsert.ExecuteNonQuery();
+                        if (y > 0)
+                        {
 
-                          lblmsg.Text= "Successfully Registered....";
-                      }
-                      else
-                      {
-                          lblmsg.Text = "Error While Saving Data...";
+                            lblmsg.Text = "Successfully Registered....";
+                        }
+                        else
+                        {
+                            lblmsg.Text = "Error While Saving Data...";
 
 
-                      }
-                  }
-                  else
-                  { 
-                  
-                            
-                  
-                  }
-                    
-                }
+                        }
+                    }
+                    else
+                    {
+
+                        lblmsg.Text = "Enter Valid Input";
+
+                    }
+
+                //}
             }
             catch (Exception ex)
             {
 
+            }
+            finally
+            {
+                con.Close();
+            
             }
         }
 

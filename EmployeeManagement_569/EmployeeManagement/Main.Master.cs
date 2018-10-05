@@ -15,7 +15,7 @@ namespace EmployeeManagement
             if (Request.Cookies.AllKeys.Contains("LoginCookies") && Request.Cookies["LoginCookies"] != null)
             {
                 lbl_User.Text = Request.Cookies["LoginCookies"]["User_Name"].ToString();
-                string usertype = Request.Cookies["LoginCookies"]["User_Type"].ToString();
+                //string usertype = Request.Cookies["LoginCookies"]["User_Type"].ToString();
                 
                 int userid=0;
                 int.TryParse(Request.Cookies["LoginCookies"]["UserId"].ToString(), out userid);

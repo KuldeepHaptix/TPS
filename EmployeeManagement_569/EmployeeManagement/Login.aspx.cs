@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -27,23 +29,30 @@ namespace EmployeeManagement
                 Logger.WriteCriticalLog("Login 27: exception:" + ex.Message + "::::::::" + ex.StackTrace);
             }
         }
-        MySQLDB objmysqldb = new MySQLDB();
+       
         protected void Login_Click(object sender, EventArgs e)
         {
 
-            objmysqldb.ConnectToDatabase();
+           //objmysqldb.ConnectToDatabase();
             lblmsg.Text = "";
+            string username = tb_UserName.Value.ToLower().ToString().Trim();
+            string pwd = tb_password.Value.ToString().Trim();
+            String strConnString = ConfigurationManager.ConnectionStrings["myConnectionString"].ConnectionString;
+            SqlConnection con = new SqlConnection(strConnString);
             try
             {
-                string username = tb_UserName.Value.ToLower().ToString().Trim();
-                string pwd = tb_password.Value.ToString().Trim();
-
+               
 
                 if (username != "" && pwd != "")
                 {
                     DataTable dt = new DataTable();
-                    dt = objmysqldb.GetData("select User_id,User_Name,User_Password,User_Type from user_account where User_Name='" + username + "' and User_Password='" + pwd + "' and IsDelete=0");
-                    //Response.Write("select User_id,User_Name,User_Password,User_Type from user_account where User_Name='" + username + "' and User_Password='" + pwd + "' and IsDelete=0");
+                    string qr="select user_id as User_id,user_nm as User_Name,password as User_Password from User_master where user_nm='" + username + "' and password='" + pwd + "'";
+                    SqlCommand cmd = new SqlCommand();
+                    cmd.CommandText = qr;
+                    cmd.Connection = con;
+                    con.Open();
+                    SqlDataAdapter adp = new SqlDataAdapter(cmd);
+                    adp.Fill(dt);
                     if (dt.Rows.Count > 0)
                     {
                       
@@ -52,7 +61,7 @@ namespace EmployeeManagement
                             HttpCookie cookie = new HttpCookie("LoginCookies");
                             cookie["UserId"] = dt.Rows[0]["User_id"].ToString();
                             cookie["User_Name"] = dt.Rows[0]["User_Name"].ToString();
-                            cookie["User_Type"] = dt.Rows[0]["User_Type"].ToString();
+                           
                             //if (!dt.Rows[0]["module_id"].ToString().Equals(""))
                             //{
                             //    cookie["modules"] = dt.Rows[0]["module_id"].ToString();
@@ -62,28 +71,7 @@ namespace EmployeeManagement
                             if (cookie != null)
                             {
                                 int usertid = 0;
-                                int.TryParse(dt.Rows[0]["User_id"].ToString(), out usertid);
-                                //string moduleid = dt.Rows[0]["module_id"].ToString();
-                                //string[] modules = moduleid.Split(',');
-                                //if(usertid>2)
-                                //{
-                                //    foreach (string mid in modules)
-                                //    {
-                                //        if (mid.Equals("1"))
-                                //        {
-                                //            Response.Redirect("~/Search_Employee.aspx", false);
-                                //            break;
-                                //        }
-                                //        else
-                                //        {
-                                //            Response.Redirect("~/ManageDepartment.aspx", false);
-                                //        }
-                                //    }
-                                //}
-                                //else
-                                //{
-                                //    Response.Redirect("~/Search_Employee.aspx", false);
-                                //}                              
+                                int.TryParse(dt.Rows[0]["User_id"].ToString(), out usertid);                          
                                 Response.Redirect("~/Search_Employee.aspx", false);
                             }
                         }
@@ -109,8 +97,7 @@ namespace EmployeeManagement
             }
             finally
             {
-                objmysqldb.CloseSQlConnection();
-                objmysqldb.disposeConnectionObj();
+                con.Close();
             }
         }
     }
