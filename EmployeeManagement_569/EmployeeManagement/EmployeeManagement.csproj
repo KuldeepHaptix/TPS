@@ -19,6 +19,8 @@
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
+    <Use64BitIISExpress />
+    <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -176,8 +178,11 @@
     <Content Include="EmpWiseTimeConfig.aspx" />
     <Content Include="HeaderImages.jpg" />
     <Content Include="Holiday_Setup.aspx" />
+    <Content Include="index.html" />
     <Content Include="LeftEmployee.aspx" />
     <Content Include="Login.aspx" />
+    <Content Include="login\css\style.css" />
+    <Content Include="login\js\index.js" />
     <Content Include="Log\CriticalLog.txt" />
     <Content Include="ManageDepartment.aspx" />
     <Content Include="ManageDesignation.aspx" />
@@ -1333,6 +1338,7 @@
     <Content Include="plugins\datatables\extensions\TableTools\images\psd\printer.psd" />
     <Content Include="plugins\datatables\extensions\TableTools\Readme.md" />
     <Content Include="Main.Master" />
+    <Content Include="login\scss\style.scss" />
     <None Include="Properties\PublishProfiles\empmgmt.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

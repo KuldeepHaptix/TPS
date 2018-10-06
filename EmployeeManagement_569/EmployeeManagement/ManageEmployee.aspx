@@ -130,6 +130,8 @@
                                 <br />
                                 <br />--%>
                            <%-- </div>--%>
+        <div class="box box-default " id="panel_7">
+             <div class="box-body">
                             <div class="row col-md-4">
                                 <div class="col-md-12">
 
@@ -219,10 +221,11 @@
                             </div>--%>
                         <%--</div>
                     </div>
-                </div>--%>--%>--%>
+                </div>--%>
 
                 <%--//Personal--%>
-
+                 </div>
+            </div>
                <div class="box box-default collapsed-box" id="panel_2">
 					<div class="box-header with-border" data-id="2">
                         <h3 class="box-title"><b>Employee Personal Details</b></h3>
@@ -419,9 +422,8 @@
 
 
                                 </div>
-                                <br />
-                                <br />
-                                <br />
+                                
+                               
                                 <%--<div class="col-md-12">
 
                                     <div class="col-md-2Pay Scale
@@ -442,8 +444,7 @@
 
                                 </div>--%>
                                 <br />
-                                <br />
-                                <br /><br /><br />
+                               <br />
                                 <div class="col-md-12">
                                     <div class="col-md-6">
                                         <div id="val_msg_wrap_p" class="abc">
@@ -458,19 +459,17 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="row col-md-4">
-                                <div class="col-md-12">
+                            <div class="row col-md-12">
+                               <%-- <div class="col-md-12">
                                     <div class="col-md-5">
                                         <asp:Label ID="Label116" class="control-label" runat="server" Text="Complaint No"></asp:Label>
                                     </div>
                                     <div class="col-md-7">
                                         <asp:TextBox ID="txtcompno" ReadOnly="true" runat="server" class="form-control" AutoPostBack="false" TabIndex="22"></asp:TextBox>
                                     </div>
-                                </div>
+                                </div>--%>
                                 <br />
-                                <br />
-                                <br />
-                                <div class="col-md-12">
+                                <%--<div class="col-md-12">
 
                                     <div class="col-md-5">
                                         <asp:Label ID="Label25" class="control-label" runat="server" Visible="false" Text="Blood Group"></asp:Label>
@@ -479,9 +478,6 @@
                                         <asp:TextBox ID="txtblood" Visible="false" runat="server" class="form-control" AutoPostBack="false" TabIndex="25"></asp:TextBox>
                                     </div>
                                 </div>
-                                <br />
-                                <br />
-                                <br />
                                 <br />
                                 <div class="col-md-12">
 
@@ -494,9 +490,6 @@
                                     </div>
                                 </div>
                                 <br />
-                                <br />
-                                <br />
-
                                 <div class="col-md-12">
 
                                     <div class="col-md-5">
@@ -506,8 +499,6 @@
                                         <asp:TextBox ID="txtmarrigeDate" runat="server" Visible="false" class="form-control pull-right dates" AutoPostBack="false" TabIndex="31"></asp:TextBox>
                                     </div>
                                 </div>
-                                <br />
-                                <br />
                                 <br />
                                 <div class="col-md-12">
 
@@ -519,8 +510,6 @@
                                     </div>
                                 </div>
                                 <br />
-                                <br />
-                                <br />
                                 <div class="col-md-12">
 
                                     <div class="col-md-5">
@@ -531,11 +520,7 @@
                                     </div>
                                 </div>
                                 <br />
-                                <br />
-                                <br />
-
                                 <div class="col-md-12">
-
                                     <div class="col-md-5">
                                         <asp:Label ID="Label33" Visible="false" class="control-label" runat="server" Text="Aadhar Card No"></asp:Label>
                                     </div>
@@ -543,9 +528,7 @@
                                         <asp:TextBox ID="txtahdar" runat="server" Visible="false" class="form-control pull-right" AutoPostBack="false" onkeypress="return isNumberKey(event);" TabIndex="40"></asp:TextBox>
                                     </div>
                                 </div>
-                                <br />
-                                <br />
-                                <br /> <br />
+                                <br /> --%>
                                <%-- <div class="col-md-12">
 
                                     <div class="col-md-5">
@@ -1015,7 +998,7 @@
 
                
             </div>
-        </div>--%>--%>
+        </div>--%>
     </section>
     <script>
         $(function () {

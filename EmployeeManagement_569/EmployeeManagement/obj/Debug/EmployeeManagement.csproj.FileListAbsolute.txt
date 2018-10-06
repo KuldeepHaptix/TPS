@@ -35,3 +35,11 @@ E:\Application\EmployeeManagement_569.rar 23-09-2018.rar 23-09-2018\EmployeeMana
 E:\Application\EmployeeManagement_569.rar 23-09-2018.rar 23-09-2018\EmployeeManagement_569\EmployeeManagement_569\EmployeeManagement\obj\Debug\EmployeeManagement.csproj.CopyComplete
 E:\Application\EmployeeManagement_569.rar 23-09-2018.rar 23-09-2018\EmployeeManagement_569\EmployeeManagement_569\EmployeeManagement\obj\Debug\EmployeeManagement.dll
 E:\Application\EmployeeManagement_569.rar 23-09-2018.rar 23-09-2018\EmployeeManagement_569\EmployeeManagement_569\EmployeeManagement\obj\Debug\EmployeeManagement.pdb
+E:\Application\TPS\TPS\EmployeeManagement_569\EmployeeManagement\bin\EmployeeManagement.dll.config
+E:\Application\TPS\TPS\EmployeeManagement_569\EmployeeManagement\bin\EmployeeManagement.dll
+E:\Application\TPS\TPS\EmployeeManagement_569\EmployeeManagement\bin\EmployeeManagement.pdb
+E:\Application\TPS\TPS\EmployeeManagement_569\EmployeeManagement\obj\Debug\EmployeeManagement.csprojAssemblyReference.cache
+E:\Application\TPS\TPS\EmployeeManagement_569\EmployeeManagement\obj\Debug\EmployeeManagement.csproj.CoreCompileInputs.cache
+E:\Application\TPS\TPS\EmployeeManagement_569\EmployeeManagement\obj\Debug\EmployeeManagement.csproj.CopyComplete
+E:\Application\TPS\TPS\EmployeeManagement_569\EmployeeManagement\obj\Debug\EmployeeManagement.dll
+E:\Application\TPS\TPS\EmployeeManagement_569\EmployeeManagement\obj\Debug\EmployeeManagement.pdb

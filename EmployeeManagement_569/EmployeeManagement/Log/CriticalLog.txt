@@ -177,3 +177,33 @@ Time:9/9/2018 2:25:17 PM
 ManageEmployee 87: exception:Object reference not set to an instance of an object.::::::::   at EmployeeManagement.ManageEmployee.Page_Load(Object sender, EventArgs e) in d:\CompanyProject\EmployeeManagement_569\EmployeeManagement_569\EmployeeManagement\ManageEmployee.aspx.cs:line 41
 
 
+Time:10/6/2018 2:45:20 PM
+Search_Employee 165: exception:Unable to connect to any of the specified MySQL hosts.::::::::   at EmployeeManagement.MySQLDB.GetData(String SelectStatement) in E:\Application\TPS\TPS\EmployeeManagement_569\EmployeeManagement\App_Code\MySQLDB.cs:line 121
+   at EmployeeManagement.Search_Employee.BindSearchCriteria() in E:\Application\TPS\TPS\EmployeeManagement_569\EmployeeManagement\Search_Employee.aspx.cs:line 65
+
+
+Time:10/6/2018 2:55:54 PM
+Search_Employee 165: exception:Unable to connect to any of the specified MySQL hosts.::::::::   at EmployeeManagement.MySQLDB.GetData(String SelectStatement) in E:\Application\TPS\TPS\EmployeeManagement_569\EmployeeManagement\App_Code\MySQLDB.cs:line 121
+   at EmployeeManagement.Search_Employee.BindSearchCriteria() in E:\Application\TPS\TPS\EmployeeManagement_569\EmployeeManagement\Search_Employee.aspx.cs:line 65
+
+
+Time:10/6/2018 3:08:03 PM
+Search_Employee 165: exception:Unable to connect to any of the specified MySQL hosts.::::::::   at EmployeeManagement.MySQLDB.GetData(String SelectStatement) in E:\Application\TPS\TPS\EmployeeManagement_569\EmployeeManagement\App_Code\MySQLDB.cs:line 121
+   at EmployeeManagement.Search_Employee.BindSearchCriteria() in E:\Application\TPS\TPS\EmployeeManagement_569\EmployeeManagement\Search_Employee.aspx.cs:line 65
+
+
+Time:10/6/2018 3:28:06 PM
+Search_Employee 165: exception:Unable to connect to any of the specified MySQL hosts.::::::::   at EmployeeManagement.MySQLDB.GetData(String SelectStatement) in E:\Application\TPS\TPS\EmployeeManagement_569\EmployeeManagement\App_Code\MySQLDB.cs:line 121
+   at EmployeeManagement.Search_Employee.BindSearchCriteria() in E:\Application\TPS\TPS\EmployeeManagement_569\EmployeeManagement\Search_Employee.aspx.cs:line 65
+
+
+Time:10/6/2018 4:48:36 PM
+Search_Employee 165: exception:Unable to connect to any of the specified MySQL hosts.::::::::   at EmployeeManagement.MySQLDB.GetData(String SelectStatement) in E:\Application\TPS\TPS\EmployeeManagement_569\EmployeeManagement\App_Code\MySQLDB.cs:line 121
+   at EmployeeManagement.Search_Employee.BindSearchCriteria() in E:\Application\TPS\TPS\EmployeeManagement_569\EmployeeManagement\Search_Employee.aspx.cs:line 65
+
+
+Time:10/6/2018 5:06:52 PM
+Search_Employee 165: exception:Unable to connect to any of the specified MySQL hosts.::::::::   at EmployeeManagement.MySQLDB.GetData(String SelectStatement) in E:\Application\TPS\TPS\EmployeeManagement_569\EmployeeManagement\App_Code\MySQLDB.cs:line 121
+   at EmployeeManagement.Search_Employee.BindSearchCriteria() in E:\Application\TPS\TPS\EmployeeManagement_569\EmployeeManagement\Search_Employee.aspx.cs:line 65
+
+

@@ -21,9 +21,10 @@ namespace EmployeeManagement
         public void cleardata()
         {
             txtconfpwd.Text = " ";
-            txtemail.Text = "";
-            txtpwd.Text = "";
-            txtname.Text="";
+            txtemail.Text = " ";
+            txtpwd.Text = " ";
+            txtname.Text=" ";
+            lblmsg.Text = "";
 
         }
         private bool ValidateEmail(string emailId)
