@@ -43,3 +43,10 @@ E:\Application\TPS\TPS\EmployeeManagement_569\EmployeeManagement\obj\Debug\Emplo
 E:\Application\TPS\TPS\EmployeeManagement_569\EmployeeManagement\obj\Debug\EmployeeManagement.csproj.CopyComplete
 E:\Application\TPS\TPS\EmployeeManagement_569\EmployeeManagement\obj\Debug\EmployeeManagement.dll
 E:\Application\TPS\TPS\EmployeeManagement_569\EmployeeManagement\obj\Debug\EmployeeManagement.pdb
+E:\Application\TPS\TPS\EmployeeManagement_569\EmployeeManagement\bin\System.Net.Http.Extensions.dll
+E:\Application\TPS\TPS\EmployeeManagement_569\EmployeeManagement\bin\System.Net.Http.Primitives.dll
+E:\Application\TPS\TPS\EmployeeManagement_569\EmployeeManagement\bin\System.Net.Http.Extensions.xml
+E:\Application\TPS\TPS\EmployeeManagement_569\EmployeeManagement\bin\System.Net.Http.Primitives.xml
+E:\Application\TPS\TPS\EmployeeManagement_569\EmployeeManagement\obj\Debug\EmployeeManagement.csproj.App.config
+E:\Application\TPS\TPS\EmployeeManagement_569\EmployeeManagement\bin\RestSharp.dll
+E:\Application\TPS\TPS\EmployeeManagement_569\EmployeeManagement\bin\RestSharp.xml

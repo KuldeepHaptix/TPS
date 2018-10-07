@@ -4,7 +4,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
     <section class="content-header">
-        <h1>Assign Enginerr to Complaint  
+        <h1>Assign Engineer to Complaint  
             <small>
                 <asp:Label runat="server" ID="lblDateTime"> </asp:Label>
             </small>
@@ -110,7 +110,7 @@
                                         <asp:Label ID="lblemp_id" runat="server" Visible="false" DataField="eng_id" Text='<%# Eval("eng_id") %>'></asp:Label>
                                     </ItemTemplate>
                                 </asp:TemplateField>
-                                <asp:TemplateField HeaderText="Enginerr Name">
+                                <asp:TemplateField HeaderText="Engineer Name">
                                     <ItemTemplate>
                                         <asp:Label ID="lblempName" runat="server" Text='<%# Eval("Name") %>'></asp:Label>
                                     </ItemTemplate>

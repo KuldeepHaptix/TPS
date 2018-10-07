@@ -1,12 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
-using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Net.Http;
+using System.Net.Http.Headers;
+using System.Threading.Tasks;
+using RestSharp;
 
 namespace EmployeeManagement
 {
@@ -194,6 +196,7 @@ namespace EmployeeManagement
 
                 string Eng_ids = "";
                 string Eng_Contact_no="";
+                string empname = "";
                 foreach (GridViewRow gvrow in GrdEmpList.Rows)
                 {
 
@@ -203,8 +206,10 @@ namespace EmployeeManagement
                     {
                         Label emp = (Label)gvrow.FindControl("lblemp_id");
                         Label EngContactNo=(Label)gvrow.FindControl("lblengcontact");
+                        Label ename = (Label)gvrow.FindControl("lblempName");
                         Eng_ids += emp.Text.ToString() + ",";
                          Eng_Contact_no=Eng_Contact_no.ToString();
+                        empname = ename.Text.ToString();
 
                     }
                    
@@ -239,8 +244,9 @@ namespace EmployeeManagement
                         int Success = cmdInsert.ExecuteNonQuery();
                 if (Success > 0)
                 {
-                  ltrErr.Text = "Enginerr Assigned Successfully......";
-                }    
+                  ltrErr.Text = "Engineer Assigned Successfully......";
+                            sendtoclient(Comp_no, cust_Contact_no, Eng_Contact_no, empname);
+                        }    
                     
                     }
                     else
@@ -261,6 +267,16 @@ namespace EmployeeManagement
                 con.Dispose();
             }
         }
+        public void sendtoclient(string Comp_no, string cust_Contact_no, string Eng_Contact_no, string empname)
+        {
+            var client = new RestClient("http://api.msg91.com/api/v2/sendsms?campaign=&response=&afterminutes=&schtime=&unicode=&flash=&message=&encrypt=&authkey=&mobiles=&route=&sender=&country=91");
+            var request = new RestRequest(Method.POST);
+            request.AddHeader("content-type", "application/json");
+             request.AddHeader("authkey", "241515A8p8I240V25bb9896e");
+            request.AddParameter("application/json", "{ \"sender\": \"TPS\", \"route\": \"4\", \"country\": \"91\", \"sms\": [ { \"message\": \"Your Complaint has been book On date:"+ DateTime.Now.Ticks.ToString() + " and Complaint #:"+ Comp_no + " Assigned to"+ empname + ""+ Eng_Contact_no + "  FROM TPS\", \"to\": [ \""+ cust_Contact_no + "\" ] }, { \"message\": \"this is employee test \", \"to\": [ \""+ Eng_Contact_no + "\" ] } ] }", ParameterType.RequestBody);
+            IRestResponse response = client.Execute(request);
+            Response.Write("status"+response.Content);
+        }
 
         protected void dlComplaint_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -268,8 +284,12 @@ namespace EmployeeManagement
             if (comp_id > 0)
             {
                 GetCOmplaintDetailsById(comp_id);
+                
             }
             //getComplaintDetails(comp_id);
+
         }
+
+        
     }
 }

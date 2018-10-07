@@ -409,6 +409,24 @@ namespace EmployeeManagement {
         protected global::System.Web.UI.WebControls.Button btnAddComailnt;
         
         /// <summary>
+        /// Label116 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label116;
+        
+        /// <summary>
+        /// txtcompno control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtcompno;
+        
+        /// <summary>
         /// Label40 control.
         /// </summary>
         /// <remarks>

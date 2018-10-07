@@ -460,14 +460,14 @@
                                 </div>
                             </div>
                             <div class="row col-md-12">
-                               <%-- <div class="col-md-12">
+                                <div class="col-md-12">
                                     <div class="col-md-5">
                                         <asp:Label ID="Label116" class="control-label" runat="server" Text="Complaint No"></asp:Label>
                                     </div>
                                     <div class="col-md-7">
                                         <asp:TextBox ID="txtcompno" ReadOnly="true" runat="server" class="form-control" AutoPostBack="false" TabIndex="22"></asp:TextBox>
                                     </div>
-                                </div>--%>
+                                </div>
                                 <br />
                                 <%--<div class="col-md-12">
 
